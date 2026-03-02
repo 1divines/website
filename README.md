@@ -1,55 +1,41 @@
-# Divine Site
+# Symone Sensations Website
 
-Multi-page artist website with embedded media and outbound link analytics.
+Static multi-page website for `symonesensations.com`.
 
-## Files
+## Pages
 - `index.html`: Landing page
-- `listen.html`: Streaming/social links
-- `media.html`: Instagram embeds + video slots
-- `contact.html`: Email + socials
+- `listen.html`: Shop links (placeholder storefront cards)
+- `media.html`: Product collections and promo video
+- `contact.html`: Contact + social links
 - `styles.css`: Shared styling
-- `tracking.js`: Outbound click tracking
+- `tracking.js`: Outbound link analytics events
 
-## Current links
-- Spotify: https://open.spotify.com/artist/0yxSA9lOBPdxH7hdyP089c
-- Apple Music: https://music.apple.com/us/artist/divine/1795932979
-- Instagram: https://www.instagram.com/1divines/
-- X: https://x.com/dvnsxo
-- Email: divinesmngmt@gmail.com
+## Deploy (same pattern as your 1divines site)
+This repo is set to deploy automatically to GitHub Pages on every push to `main` via:
+- `.github/workflows/deploy-pages.yml`
+- `CNAME` set to `symonesensations.com`
 
-## Add or change media
-1. Instagram embeds:
-   - In `media.html`, update `data-instgrm-permalink` URLs.
-2. YouTube embed:
-   - Replace `YOUR_VIDEO_ID` in `media.html`.
-3. Local video:
-   - Drop file in `assets/` and update `./assets/media-1.mp4` path.
+## One-time GitHub setup
+1. In the GitHub repo, open `Settings -> Pages`.
+2. Under Build and deployment, set `Source` to `GitHub Actions`.
+3. Push to `main` and wait for the `Deploy static site to GitHub Pages` workflow to finish.
 
-## Analytics setup
-Use one provider:
+## One-time domain DNS setup
+At your domain DNS provider for `symonesensations.com` add:
 
-1. Plausible
-- Uncomment the Plausible script block in `index.html` `<head>`.
-- Set `data-domain` to your domain.
+1. `A` records for root (`@`):
+- `185.199.108.153`
+- `185.199.109.153`
+- `185.199.110.153`
+- `185.199.111.153`
 
-2. GA4
-- Uncomment the GA block in `index.html` `<head>`.
-- Replace `G-XXXXXXXXXX` with your Measurement ID.
+2. `CNAME` record for `www`:
+- Host: `www`
+- Value: `1divines.github.io`
 
-Tracked events from `tracking.js`:
-- Plausible event: `Outbound Link: Click`
-- GA4 event: `click_outbound_link`
+Then in GitHub `Settings -> Pages`, set Custom domain to `symonesensations.com` and enable `Enforce HTTPS` after DNS resolves.
 
-## Preview
-Fast preview (no server):
-```bash
-open "/Users/devin/Documents/New project/index.html"
-```
-
-Best preview for embeds:
-- Use localhost once Command Line Tools are installed:
-```bash
-cd "/Users/devin/Documents/New project"
-python3 -m http.server 8080
-```
-- Open: http://localhost:8080
+## Placeholder updates you should make next
+- Replace images in `assets/`
+- Replace placeholder social/store links in `listen.html` and `contact.html`
+- Optional: enable analytics script in `index.html` (Plausible or GA4)
