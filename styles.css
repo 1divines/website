@@ -137,8 +137,9 @@ nav a[aria-current='page'] {
 
 .listen-image-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
   gap: 14px;
+  justify-content: start;
 }
 
 .listen-image-card {
@@ -194,20 +195,32 @@ nav a[aria-current='page'] {
   transform: translateY(-1px);
 }
 
-.media-grid {
+.media-card {
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  justify-items: center;
+}
+
+.media-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.media-embed-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
   gap: 16px;
 }
 
-.media-card {
-  padding: 0;
-}
-
 .embed-frame {
-  width: 100%;
+  width: min(360px, 100%);
   aspect-ratio: 16 / 9;
   background: #0b0b10;
+}
+
+.media-vertical .embed-frame {
+  aspect-ratio: 9 / 16;
+  width: min(320px, 100%);
 }
 
 .embed-frame iframe,
@@ -220,14 +233,17 @@ nav a[aria-current='page'] {
 }
 
 .ig-embed-wrap {
-  min-height: 470px;
+  min-height: 420px;
   background: #fff;
   display: grid;
   place-items: center;
+  width: 100%;
 }
 
 .ig-embed-wrap .instagram-media {
   margin: 0 !important;
+  max-width: 320px !important;
+  width: 100% !important;
 }
 
 .contact {
@@ -251,7 +267,7 @@ nav a[aria-current='page'] {
 @media (max-width: 860px) {
   .listen-grid,
   .listen-image-grid,
-  .media-grid {
+  .media-embed-row {
     grid-template-columns: 1fr;
   }
 
