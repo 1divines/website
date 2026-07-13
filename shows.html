@@ -3,22 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Divine</title>
-    <meta name="description" content="Official website for Divine." />
-
-    <!-- Option A: Plausible -->
-    <!-- <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script> -->
-
-    <!-- Option B: Google Analytics 4 -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    -->
+    <title>Divine | Shows</title>
+    <meta name="description" content="Upcoming shows and tickets for Divine." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,20 +13,29 @@
   </head>
   <body>
     <main class="page">
-      <header class="home-header">
-        <a class="logo home-logo" href="./index.html">Divine</a>
+      <header>
+        <a class="logo" href="./index.html">Divine</a>
         <nav>
           <a href="./listen.html">LISTEN</a>
           <a href="./media.html">MEDIA</a>
-          <a href="./shows.html">SHOWS</a>
+          <a href="./shows.html" aria-current="page">SHOWS</a>
           <a href="./contact.html">CONTACT</a>
         </nav>
       </header>
 
-      <section class="hero">
-        <h1 class="hero-title">Divine</h1>
-        <img class="hero-image" src="./assets/divine-main.jpg" alt="Divine portrait" />
-        <a class="cta tracked-link" data-link-name="Stream Now" href="./listen.html">STREAM NOW</a>
+      <section>
+        <h2 class="section-title">SHOWS</h2>
+        <div class="shows-list">
+          <article class="show-card">
+            <div class="show-info">
+              <span class="show-presenter">LOUDHOUSE PRESENTS</span>
+              <h3 class="show-name">THE P!NK PARTY</h3>
+              <p class="show-date">SAT JULY 25 &middot; 10 PM &ndash; 2 AM &middot; GAINESVILLE, FL</p>
+              <p class="show-note">18+ &middot; Address sent to ticket holders 24 hours before the event</p>
+            </div>
+            <a class="cta tracked-link" data-link-name="Pink Party Tickets" href="https://events.ticketleap.com/tickets/loudhouse/pinkparty" target="_blank" rel="noopener noreferrer">TICKETS</a>
+          </article>
+        </div>
       </section>
 
       <footer class="site-footer">
